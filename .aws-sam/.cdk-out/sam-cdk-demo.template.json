@@ -1,0 +1,600 @@
+{
+  "Resources": {
+    "CryptoFunctionServiceRoleE5F9470A": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/CryptoFunction/ServiceRole/Resource"
+      }
+    },
+    "CryptoFunction63BD24A0": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3BucketDD2849F2"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3VersionKeyB32A0ED4"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3VersionKeyB32A0ED4"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "CryptoFunctionServiceRoleE5F9470A",
+            "Arn"
+          ]
+        },
+        "Handler": "handler.lambda_handler",
+        "Runtime": "python3.8",
+        "Timeout": 30
+      },
+      "DependsOn": [
+        "CryptoFunctionServiceRoleE5F9470A"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/CryptoFunction/Resource",
+        "aws:asset:path": "/Users/lorenzvanthillo/projects/sam-cdk-demo/lambda",
+        "aws:asset:property": "Code"
+      }
+    },
+    "cryptoapi0A83964F": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "crypto-api"
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/Resource"
+      }
+    },
+    "cryptoapiCloudWatchRole167C6D2D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "apigateway.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/CloudWatchRole/Resource"
+      }
+    },
+    "cryptoapiAccount0CB19D6A": {
+      "Type": "AWS::ApiGateway::Account",
+      "Properties": {
+        "CloudWatchRoleArn": {
+          "Fn::GetAtt": [
+            "cryptoapiCloudWatchRole167C6D2D",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "cryptoapi0A83964F"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/Account"
+      }
+    },
+    "cryptoapiDeploymentFD9AE13B7df26581a636d6053b611195ebc69d77": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "cryptoapi0A83964F"
+        },
+        "Description": "Automatically created by the RestApi construct"
+      },
+      "DependsOn": [
+        "cryptoapicryptoGET81BD69BB",
+        "cryptoapicrypto249A5FAB",
+        "cryptoapivalidatorE431A54F"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/Deployment/Resource"
+      }
+    },
+    "cryptoapiDeploymentStageprod74F48586": {
+      "Type": "AWS::ApiGateway::Stage",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "cryptoapi0A83964F"
+        },
+        "DeploymentId": {
+          "Ref": "cryptoapiDeploymentFD9AE13B7df26581a636d6053b611195ebc69d77"
+        },
+        "StageName": "prod"
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/DeploymentStage.prod/Resource"
+      }
+    },
+    "cryptoapicrypto249A5FAB": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "cryptoapi0A83964F",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "crypto",
+        "RestApiId": {
+          "Ref": "cryptoapi0A83964F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/Default/crypto/Resource"
+      }
+    },
+    "cryptoapicryptoGETApiPermissionsamcdkdemocryptoapiE240DA32GETcrypto26049051": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CryptoFunction63BD24A0",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "cryptoapi0A83964F"
+              },
+              "/",
+              {
+                "Ref": "cryptoapiDeploymentStageprod74F48586"
+              },
+              "/GET/crypto"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/Default/crypto/GET/ApiPermission.samcdkdemocryptoapiE240DA32.GET..crypto"
+      }
+    },
+    "cryptoapicryptoGETApiPermissionTestsamcdkdemocryptoapiE240DA32GETcrypto25B528BA": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CryptoFunction63BD24A0",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "cryptoapi0A83964F"
+              },
+              "/test-invoke-stage/GET/crypto"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/Default/crypto/GET/ApiPermission.Test.samcdkdemocryptoapiE240DA32.GET..crypto"
+      }
+    },
+    "cryptoapicryptoGET81BD69BB": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Ref": "cryptoapicrypto249A5FAB"
+        },
+        "RestApiId": {
+          "Ref": "cryptoapi0A83964F"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CryptoFunction63BD24A0",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "RequestParameters": {
+          "method.request.querystring.coin": true,
+          "method.request.querystring.type": true
+        },
+        "RequestValidatorId": {
+          "Ref": "cryptoapivalidatorE431A54F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/Default/crypto/GET/Resource"
+      }
+    },
+    "cryptoapivalidatorE431A54F": {
+      "Type": "AWS::ApiGateway::RequestValidator",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "cryptoapi0A83964F"
+        },
+        "ValidateRequestParameters": true
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/crypto-api/validator/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE1WPwW7CMBBEv4W7Y0CIA7emVL1VjYLU+9ZZUkNsp961UBTl32s70KannR09e2a3crvZy83qCW5UqOa6HpXzKMcTg7qKkgg5ylbbVtRILniF4ugssQ+KxfFsK/BgkNGn5T1wH7L9B59t5BvN2tlJpJSxA/PZgBxfg1XJTsxSV+iNJsoPNBg51q7LH6U5CdoVkHqRzPUE9LoFxhsMkUTistf3Bg9ZKuWCZfGCfecGgzZXXGzpxJwwi0f5ZyAUy0t+9Rvyl2uSdVc1focY+AGdboCdn+n/3jRNohoibtc7eZD71YW0Lnxspg3Kep4/eDlpZJEBAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "sam-cdk-demo/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Parameters": {
+    "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3BucketDD2849F2": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad\""
+    },
+    "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3VersionKeyB32A0ED4": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad\""
+    },
+    "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adArtifactHashCEA7A437": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad\""
+    }
+  },
+  "Outputs": {
+    "cryptoapiEndpoint566366AE": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "cryptoapi0A83964F"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/",
+            {
+              "Ref": "cryptoapiDeploymentStageprod74F48586"
+            },
+            "/"
+          ]
+        ]
+      }
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "af-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

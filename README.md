@@ -1,65 +1,27 @@
 
-# Welcome to your CDK Python project!
+# SAM and CDK Demo
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`sam_cdk_demo_stack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+Setup
+![image](https://user-images.githubusercontent.com/14105387/119160065-2bd1f300-ba58-11eb-9dfe-d141fec8b5e0.png)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+API Gateway Lambda proxy integration which requires to query string parameters (coin and price type) to get the current price of a cryptocurrency expressed in Bitcoin.
 
-This project is set up like a standard Python project.  The initialization process also creates
-a virtualenv within this project, stored under the .venv directory.  To create the virtualenv
-it assumes that there is a `python3` executable in your path with access to the `venv` package.
-If for any reason the automatic creation of the virtualenv fails, you can create the virtualenv
-manually once the init process completes.
-
-To manually create a virtualenv on MacOS and Linux:
-
-```
-$ python3 -m venv .venv
-```
-
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
-
+Test locally:
 ```
 $ source .venv/bin/activate
+$ pip3 install -r requirements.txt
+$ sam-beta-cdk build --use-container
+$ sam-beta-cdk local start-api
 ```
 
-If you are a Windows platform, you would activate the virtualenv like this:
-
+Deploy to AWS:
 ```
-% .venv\Scripts\activate.bat
-```
-
-Once the virtualenv is activated, you can install the required dependencies.
-
-```
-$ pip install -r requirements.txt
+$ cdk deploy -a .aws-sam/build
 ```
 
-At this point you can now synthesize the CloudFormation template for this code.
-
+Test API (locally):
 ```
-$ cdk synth
-```
-
-You can now begin exploring the source code, contained in the hello directory.
-There is also a very trivial test included that can be run like this:
-
-```
-$ pytest
+$ curl http://127.0.0.1:3000/crypto?type=ask&coin=ETH
 ```
 
-To add additional dependencies, for example other CDK libraries, just add to
-your requirements.txt file and rerun the `pip install -r requirements.txt`
-command.
-
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+Full demo can be found here.

@@ -1,0 +1,421 @@
+{
+    "version": "11.0.0",
+    "artifacts": {
+        "Tree": {
+            "type": "cdk:tree",
+            "properties": {
+                "file": "tree.json"
+            }
+        },
+        "sam-cdk-demo": {
+            "type": "aws:cloudformation:stack",
+            "environment": "aws://unknown-account/unknown-region",
+            "properties": {
+                "templateFile": "sam-cdk-demo.template.json",
+                "validateOnSynth": false
+            },
+            "metadata": {
+                "/sam-cdk-demo": [
+                    {
+                        "type": "aws:cdk:asset",
+                        "data": {
+                            "path": "/Users/lorenzvanthillo/projects/sam-cdk-demo/.aws-sam/build/sam-cdk-demo/CryptoFunction63BD24A0",
+                            "id": "762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad",
+                            "packaging": "zip",
+                            "sourceHash": "762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad",
+                            "s3BucketParameter": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3BucketDD2849F2",
+                            "s3KeyParameter": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3VersionKeyB32A0ED4",
+                            "artifactHashParameter": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adArtifactHashCEA7A437"
+                        },
+                        "trace": [
+                            "ConstructNode.addMetadata (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/construct-compat.js:405:62)",
+                            "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:175:29)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+                            "Stack.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+                            "new Asset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+                            "AssetCode.bind (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+                            "new Function (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/CryptoFunction/ServiceRole/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "CryptoFunctionServiceRoleE5F9470A",
+                        "trace": [
+                            "new Role (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+                            "new Function (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function.js:79:35)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/CryptoFunction/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "CryptoFunction63BD24A0",
+                        "trace": [
+                            "new Function (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function.js:135:26)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/AssetParameters/762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad/S3Bucket": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3BucketDD2849F2",
+                        "trace": [
+                            "new FileAssetParameters (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+                            "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+                            "Stack.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+                            "new Asset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+                            "AssetCode.bind (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+                            "new Function (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/AssetParameters/762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad/S3VersionKey": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adS3VersionKeyB32A0ED4",
+                        "trace": [
+                            "new FileAssetParameters (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+                            "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+                            "Stack.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+                            "new Asset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+                            "AssetCode.bind (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+                            "new Function (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/AssetParameters/762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807ad/ArtifactHash": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "AssetParameters762e024e1046e93656436460f3ae8a7d9d491a0653dda4a4ac4d1c51a30807adArtifactHashCEA7A437",
+                        "trace": [
+                            "new FileAssetParameters (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+                            "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:162:22)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:83:25)",
+                            "Stack.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack.js:410:33)",
+                            "LegacyStackSynthesizer.addFileAsset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:87:31)",
+                            "new Asset (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+                            "AssetCode.bind (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/code.js:258:26)",
+                            "new Function (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:33)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapi0A83964F",
+                        "trace": [
+                            "new RestApi (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:401:26)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/CloudWatchRole/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapiCloudWatchRole167C6D2D",
+                        "trace": [
+                            "new Role (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-iam/lib/role.js:72:22)",
+                            "RestApi._configureCloudWatchRole (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:250:22)",
+                            "new RestApi (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:417:18)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Account": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapiAccount0CB19D6A",
+                        "trace": [
+                            "RestApi._configureCloudWatchRole (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:254:26)",
+                            "new RestApi (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:417:18)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Deployment/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapiDeploymentFD9AE13B7df26581a636d6053b611195ebc69d77",
+                        "trace": [
+                            "new Deployment (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/deployment.js:48:25)",
+                            "RestApi._configureDeployment (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:278:38)",
+                            "new RestApi (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:419:14)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/DeploymentStage.prod/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapiDeploymentStageprod74F48586",
+                        "trace": [
+                            "new Stage (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/stage.js:61:26)",
+                            "RestApi._configureDeployment (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:286:36)",
+                            "new RestApi (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:419:14)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Endpoint": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapiEndpoint566366AE",
+                        "trace": [
+                            "RestApi._configureDeployment (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:290:13)",
+                            "new RestApi (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:419:14)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:58",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "Kernel._create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8154:34)",
+                            "Kernel.create (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7895:29)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Default/crypto/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapicrypto249A5FAB",
+                        "trace": [
+                            "new Resource (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:231:26)",
+                            "RootResource.addResource (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:28:16)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:134",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:107",
+                            "Kernel._ensureSync (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8563:28)",
+                            "Kernel.invoke (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:34)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Default/crypto/GET/ApiPermission.samcdkdemocryptoapiE240DA32.GET..crypto": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapicryptoGETApiPermissionsamcdkdemocryptoapiE240DA32GETcrypto26049051",
+                        "trace": [
+                            "Function.addPermission (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:40:9)",
+                            "LambdaIntegration.bind (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:44:22)",
+                            "new Method (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/method.js:41:40)",
+                            "Resource.addMethod (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:36:16)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:134",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:107",
+                            "Kernel._ensureSync (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8563:28)",
+                            "Kernel.invoke (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:34)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Default/crypto/GET/ApiPermission.Test.samcdkdemocryptoapiE240DA32.GET..crypto": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapicryptoGETApiPermissionTestsamcdkdemocryptoapiE240DA32GETcrypto25B528BA",
+                        "trace": [
+                            "Function.addPermission (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:40:9)",
+                            "LambdaIntegration.bind (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:51:26)",
+                            "new Method (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/method.js:41:40)",
+                            "Resource.addMethod (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:36:16)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:134",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:107",
+                            "Kernel._ensureSync (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8563:28)",
+                            "Kernel.invoke (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:34)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/Default/crypto/GET/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapicryptoGET81BD69BB",
+                        "trace": [
+                            "new Method (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/method.js:57:26)",
+                            "Resource.addMethod (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:36:16)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:134",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:107",
+                            "Kernel._ensureSync (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8563:28)",
+                            "Kernel.invoke (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:34)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/crypto-api/validator/Resource": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "cryptoapivalidatorE431A54F",
+                        "trace": [
+                            "new RequestValidator (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/requestvalidator.js:26:26)",
+                            "RestApi.addRequestValidator (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:487:16)",
+                            "Method.requestValidatorId (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/method.js:179:44)",
+                            "new Method (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/method.js:54:38)",
+                            "Resource.addMethod (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:36:16)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:134",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:107",
+                            "Kernel._ensureSync (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8563:28)",
+                            "Kernel.invoke (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:34)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/CDKMetadata/Default": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "CDKMetadata",
+                        "trace": [
+                            "new MetadataResource (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+                            "visit (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+                            "visit (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+                            "injectMetadataResources (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+                            "Object.synthesize (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+                            "App.synth (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:134",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:107",
+                            "Kernel._ensureSync (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8563:28)",
+                            "Kernel.invoke (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:34)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ],
+                "/sam-cdk-demo/CDKMetadata/Condition": [
+                    {
+                        "type": "aws:cdk:logicalId",
+                        "data": "CDKMetadataAvailable",
+                        "trace": [
+                            "new MetadataResource (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:9",
+                            "visit (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:185:9)",
+                            "visit (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:182:9)",
+                            "injectMetadataResources (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:117:5)",
+                            "Object.synthesize (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+                            "App.synth (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/jsii-kernel-MpuLFy/node_modules/@aws-cdk/core/lib/stage.js:100:41)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:134",
+                            "Kernel._wrapSandboxCode (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8582:24)",
+                            "/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:107",
+                            "Kernel._ensureSync (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:8563:28)",
+                            "Kernel.invoke (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:7970:34)",
+                            "KernelHost.processRequest (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9479:36)",
+                            "KernelHost.run (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9442:22)",
+                            "Immediate._onImmediate (/private/var/folders/4n/f7dz2t3950332qrk7g6qtp6m0000gn/T/tmp59t38h4y/lib/program.js:9443:46)",
+                            "processImmediate (node:internal/timers:464:21)"
+                        ]
+                    }
+                ]
+            },
+            "displayName": "sam-cdk-demo"
+        }
+    }
+}
