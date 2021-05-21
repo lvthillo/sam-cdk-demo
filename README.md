@@ -4,7 +4,7 @@
 ### Setup
 ![image](https://user-images.githubusercontent.com/14105387/119160065-2bd1f300-ba58-11eb-9dfe-d141fec8b5e0.png)
 
-API Gateway Lambda proxy integration which requires to query string parameters (coin and price type) to get the current price of a cryptocurrency expressed in Bitcoin.
+API Gateway Lambda proxy integration which requires two query string parameters (coin and price type) to get the current price of a cryptocurrency expressed in Bitcoin.
 
 Test locally:
 ```
